@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Scissors, Shirt, Ruler } from "lucide-react";
+import { useRef } from "react";
 
 const services = [
   {
@@ -22,12 +23,14 @@ const services = [
 ];
 
 export default function Services() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
     <section className="py-16 bg-gray-50" id="services">
-      <div className="max-w-6xl mx-auto px-6 text-center">
+      <div className="max-w-6xl mx-auto px-6 text-center" ref={ref}>
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={isInView && { opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-3xl md:text-4xl font-bold mb-6"
         >
@@ -36,12 +39,12 @@ export default function Services() {
         <p className="text-gray-600 max-w-2xl mx-auto mb-12 font-semibold">
           We provide premium tailoring solutions that combine traditional craftsmanship with modern style.
         </p>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8" ref={ref}>
           {services.map((service, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={isInView && { opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
               className="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transition"
             >

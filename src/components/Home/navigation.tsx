@@ -1,16 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
-    <nav className="bg-white/90 backdrop-blur-md shadow-sm fixed w-full z-50">
-        <motion.div initial={{ opacity: 0, y: -30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+    <nav className="bg-white/90 backdrop-blur-md shadow-sm fixed w-full z-50" ref={ref}>
+        <motion.div initial={{ opacity: 0, y: -30 }} animate={isInView && { opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           {/* Left: Logo */}
           <Link href="#home" className="text-2xl font-extrabold text-gray-900 tracking-tight">
