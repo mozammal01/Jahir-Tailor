@@ -27,16 +27,16 @@ export default function Services() {
   const isInView = useInView(ref, { once: true });
   return (
     <section className="py-16 bg-gray-50" id="services">
-      <div className="max-w-6xl mx-auto px-6 text-center" ref={ref}>
+      <div className="max-w-7xl mx-auto px-6" ref={ref}>
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={isInView && { opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-bold mb-6"
+          className="text-3xl md:text-4xl font-bold mb-6 border-l-4 border-blue-600 pl-4 uppercase"
         >
-          Our Services
+          Services
         </motion.h2>
-        <p className="text-gray-600 max-w-2xl mx-auto mb-12 font-semibold">
+        <p className="text-gray-600 max-w-2xl mb-12 font-semibold">
           We provide premium tailoring solutions that combine traditional craftsmanship with modern style.
         </p>
         <div className="grid md:grid-cols-3 gap-8" ref={ref}>

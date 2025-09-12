@@ -14,7 +14,7 @@ export default function Navbar() {
         <motion.div initial={{ opacity: 0, y: -30 }} animate={isInView && { opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           {/* Left: Logo */}
-          <Link href="#home" className="text-2xl font-extrabold text-gray-900 tracking-tight">
+          <Link href="#home" className="text-2xl font-extrabold text-gray-900 tracking-tight uppercase">
             ✂️ Jahir Tailor
           </Link>
 
