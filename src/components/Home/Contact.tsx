@@ -9,8 +9,8 @@ export default function Contact() {
   const isInView = useInView(ref, { once: true });
   return (
     <div className="max-w-7xl mx-auto" id="contact">
-      <div className="mt-6 px-4">
-        <h1 className="text-4xl font-bold tracking-tight border-l-4 border-blue-600 pl-4 uppercase">Contact Us</h1>
+      <div className="mt-10 px-4">
+        <h1 className="text-4xl font-extrabold tracking-tight border-l-4 border-blue-600 pl-4 uppercase">Contact Us</h1>
       </div>
       <motion.div
         initial={{ opacity: 0, y: 30 }}

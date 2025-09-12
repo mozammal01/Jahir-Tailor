@@ -21,6 +21,9 @@ import femaleKids from "../../../public/gallery/female-kids.jpg";
 import { StaticImageData } from "next/image";
 import Image from "next/image";
 
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 interface GalleryItem {
   imageUrl: StaticImageData;
   title: string;
@@ -85,10 +88,11 @@ const galleryItems: GalleryItem[] = [
 ];
 
 export default function GallerySlider() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
     <section className="py-16 dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-6">
-
+      <div className="max-w-7xl mx-auto px-6" ref={ref}>
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={20}
@@ -108,17 +112,24 @@ export default function GallerySlider() {
         >
           {galleryItems.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="relative group overflow-hidden rounded-lg shadow-lg cursor-pointer">
-                <Image
-                  src={item.imageUrl}
-                  alt={item.title}
-                  className="w-full h-80 object-cover transform group-hover:scale-110 transition duration-300 "
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-80 opacity-0 hover:opacity-80 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-white p-4 text-center">
-                  <h3 className="text-lg font-semibold">{item.title}</h3>
-                  <p className="text-sm mt-2">{item.description}</p>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView && { opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: index * 0.2 }}
+              >
+                <div className="relative group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                  <Image
+                    src={item.imageUrl}
+                    alt={item.title}
+                    className="w-full h-80 object-cover transform group-hover:scale-110 transition duration-300 "
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-80 opacity-0 hover:opacity-80 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-white p-4 text-center">
+                    <h3 className="text-lg font-semibold">{item.title}</h3>
+                    <p className="text-sm mt-2">{item.description}</p>
+                  </div>
                 </div>
-              </div>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>

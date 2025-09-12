@@ -30,7 +30,7 @@ export default function About() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <motion.div initial={{ opacity: 0, x: -30 }} animate={isInView && { opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
           <div ref={ref} className="space-y-6">
-            <h2 className="text-4xl font-bold tracking-tight border-l-4 border-blue-600 pl-4 uppercase">About Us</h2>
+            <h2 className="text-4xl font-extrabold tracking-tight border-l-4 border-blue-600 pl-4 uppercase">About Us</h2>
 
             {paragraphs.map((text, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 30 }} animate={isInView && { opacity: 1, y: 0 }} transition={{delay: i * 0.2, duration: 0.6 }}>

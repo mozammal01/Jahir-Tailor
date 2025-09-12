@@ -8,7 +8,7 @@ interface BlogCardProps {
 
 export const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
   return (
-    <div className="bg-white shadow-md rounded-lg overflow-hidden transition-transform hover:scale-105">
+    <div className="bg-white shadow-md rounded-lg overflow-hidden transition-transform hover:scale-105 h-[400px]">
       <Image
         src={post.image}
         alt={post.title}
