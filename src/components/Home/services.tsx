@@ -1,13 +1,23 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { Scissors, Shirt, Ruler } from "lucide-react";
+import { Scissors, Shirt, Ruler, PersonStanding, ReceiptText } from "lucide-react";
 import { useRef } from "react";
 
 const services = [
   {
     icon: <Scissors className="w-10 h-10 text-indigo-600" />,
     title: "Custom Tailoring",
+    description: "Perfectly fitted suits, dresses, and traditional wear tailored just for you.",
+  },
+  {
+    icon: <ReceiptText className="w-10 h-10 text-indigo-600" />,
+    title: "Bespoke Suits",
+    description: "Perfectly fitted suits, dresses, and traditional wear tailored just for you.",
+  },
+  {
+    icon: <PersonStanding className="w-10 h-10 text-indigo-600" />,
+    title: "Designer Clothes",
     description: "Perfectly fitted suits, dresses, and traditional wear tailored just for you.",
   },
   {

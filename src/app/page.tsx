@@ -1,8 +1,11 @@
 import AboutSection from "@/components/Home/about";
 import Banner from "@/components/Home/Banner";
 import Contact from "@/components/Home/Contact";
-import Navbar from "@/components/Home/navigation";
+import Navbar from "@/components/shared/navigation";
 import Services from "@/components/Home/services";
+import FooterPage from "@/components/Home/Footer";
+import Gallery from "@/components/Home/Gallery";
+import Blogs from "@/components/Home/Blogs";
 
 export default function Home() {
   return (
@@ -14,13 +17,22 @@ export default function Home() {
         <Banner />
       </div>
       <div>
-        <Services />
-      </div>
-      <div>
         <AboutSection />
       </div>
       <div>
+        <Services />
+      </div>
+      <div>
+        <Gallery />
+      </div>
+      <div>
+        <Blogs />
+      </div>
+      <div>
         <Contact />
+      </div>
+      <div>
+        <FooterPage />
       </div>
     </>
   );

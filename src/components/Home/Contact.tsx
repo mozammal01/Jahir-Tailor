@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { ProfileForm } from "../Form/form";
-import ContactInfo from "../shared/contactInfo";
+import ContactInfo from "../ContactInfo/contactInfo";
 import { motion, useInView } from "framer-motion";
 
 export default function Contact() {
