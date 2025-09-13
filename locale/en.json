@@ -1,0 +1,12 @@
+{
+  "navigation": {
+    "brand": "Jahir Tailor",
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "gallery": "Gallery",
+    "blogs": "Blogs",
+    "contact": "Contact",
+    "login": "Login"
+  }
+}

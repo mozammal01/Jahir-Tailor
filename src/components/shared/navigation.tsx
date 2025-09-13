@@ -4,8 +4,11 @@ import { useRef, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion, useInView } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { LanguageSwitcher } from "../language-switcher/languageSwithcer";
 
 export default function Navbar() {
+  const t = useTranslations("navigation");
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -15,35 +18,38 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           {/* Left: Logo */}
           <Link href="#home" className="text-2xl font-extrabold text-gray-900 tracking-tight uppercase">
-            ✂️ Jahir Tailor
+            ✂️ {t("brand")}
           </Link>
 
           {/* Middle: Links (Desktop) */}
           <div className="hidden md:flex space-x-10 text-gray-700 font-medium">
             <Link href="#home" className="hover:text-blue-600 transition">
-              Home
+              {t("home")}
             </Link>
             <Link href="#about" className="hover:text-blue-600 transition">
-              About
+              {t("about")}
             </Link>
             <Link href="#services" className="hover:text-blue-600 transition">
-              Services
+              {t("services")}
             </Link>
             <Link href="#gallery" className="hover:text-blue-600 transition">
-              Gallery
+              {t("gallery")}
             </Link>
             <Link href="#blogs" className="hover:text-blue-600 transition">
-              Blogs
+              {t("blogs")}
             </Link>
             <Link href="#contact" className="hover:text-blue-600 transition">
-              Contact
+              {t("contact")}
             </Link>
           </div>
 
           {/* Right: CTA */}
-          <div className="hidden md:flex">
+          <div className="hidden md:flex gap-2">
+            <div className="">
+              <LanguageSwitcher />
+            </div>
             <Link href="#book" className="px-6 py-2 rounded-full bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition">
-              Login
+              {t("login")}
             </Link>
           </div>
 
@@ -58,28 +64,28 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-white shadow-lg px-6 py-4 space-y-4 text-gray-700 font-medium">
           <Link href="#home" className="block hover:text-blue-600">
-            Home
+            {t("home")}
           </Link>
           <Link href="#about" className="block hover:text-blue-600">
-            About
+            {t("about")}
           </Link>
           <Link href="#services" className="block hover:text-blue-600">
-            Services
+            {t("services")}
           </Link>
           <Link href="#gallery" className="block hover:text-blue-600">
-            Gallery
+            {t("gallery")}
           </Link>
           <Link href="#blogs" className="block hover:text-blue-600">
-            Blogs
+            {t("blogs")}
           </Link>
           <Link href="#contact" className="block hover:text-blue-600">
-            Contact
+            {t("contact")}
           </Link>
           <Link
             href="#book"
             className="block w-full text-center px-4 py-2 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-700 transition"
           >
-            Login
+            {t("login")}
           </Link>
         </div>
       )}
