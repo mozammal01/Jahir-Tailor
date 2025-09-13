@@ -146,7 +146,7 @@ export function ProfileForm({
             )}
           />
         )}
-        <Button className="w-full rounded-xl" type="submit">
+        <Button className="w-full rounded-xl mt-4" type="submit">
           {t("form.sendButton")}
         </Button>
         {socialLogin && (

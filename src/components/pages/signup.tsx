@@ -41,9 +41,9 @@ export default function SignUp() {
               className="w-full"
               emailField={true}
               passwordField={true}
-              nameField={false}
+              nameField={true}
               phoneField={false}
-              confirmPasswordField={false}
+              confirmPasswordField={true}
               messageField={false}
               socialLogin={true}
             />

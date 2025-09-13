@@ -54,9 +54,9 @@ export function InputWithLabel({ emailOrPhone, name, phone, message, password, c
       )}
       {phone && (
         <div className="grid w-full items-center gap-3">
-            <label htmlFor="phone" className="block text-sm font-bold text-gray-700">
-              {t("form.phoneInput.label")}
-            </label>
+          <label htmlFor="phone" className="block text-sm font-bold text-gray-700">
+            {t("form.phoneInput.label")}
+          </label>
           <Input className="" type="phone" id="phone" placeholder={t("form.phoneInput.placeholder")} {...field} />
         </div>
       )}
@@ -83,39 +83,44 @@ export function InputWithLabel({ emailOrPhone, name, phone, message, password, c
               required
               {...field}
               className="w-full pl-10 pr-10 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
-              placeholder="••••••••"
+              placeholder={t("form.passwordInput.placeholder")}
             />
             <button type="button" className="absolute right-3 top-2.5 text-gray-500" onClick={() => setShowPassword((prev) => !prev)}>
               {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
             </button>
           </div>
-          <div className="grid w-full items-center gap-3"></div>
         </>
       )}
       {confirmPassword && (
-        <div className="grid w-full items-center gap-3">
+        <>
           <label htmlFor="confirmPassword" className="block text-sm font-bold text-gray-700">
             {t("form.confirmPasswordInput.label")}
           </label>
-          <Input
-            className=""
-            type="confirmPassword"
-            id="confirmPassword"
-            placeholder={t("form.confirmPasswordInput.placeholder")}
-            {...field}
-          />
-        </div>
+          <div className="mt-1 relative">
+            <Lock className="absolute left-3 top-2.5 text-gray-400" size={20} />
+            <Input
+              required
+              name="confirmPassword"
+              type={showPassword ? "text" : "password"}
+              id="confirmPassword"
+              placeholder={t("form.confirmPasswordInput.placeholder")}
+              {...field}
+              className="w-full pl-10 pr-10 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            />
+            <button type="button" className="absolute right-3 top-2.5 text-gray-500" onClick={() => setShowPassword((prev) => !prev)}>
+              {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+            </button>
+          </div>
+        </>
       )}
-      {
-        socialLogin && (
-          <div className="grid w-full items-center gap-3 mt-4">
-            <Button variant="outline" className="w-full">
+      {socialLogin && (
+        <div className="grid w-full items-center gap-3 mt-4">
+          <Button variant="outline" className="w-full">
             <FcGoogle />
             {tSocialLogin("label")}
-            </Button>
-          </div>
-        )
-      }
+          </Button>
+        </div>
+      )}
     </>
   );
 }
