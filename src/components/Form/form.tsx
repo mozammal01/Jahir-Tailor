@@ -17,6 +17,7 @@ const formSchema = z.object({
   password: z.string().min(0, {}),
   confirmPassword: z.string().min(0, {}),
   socialLogin: z.boolean(),
+  forgetPassword: z.boolean(),
 });
 
 interface ProfileFormProps {
@@ -28,6 +29,7 @@ interface ProfileFormProps {
   confirmPasswordField: boolean;
   className: string;
   socialLogin: boolean;
+  forgetPassword: boolean;
 }
 
 export function ProfileForm({
@@ -39,6 +41,7 @@ export function ProfileForm({
   confirmPasswordField,
   className,
   socialLogin,
+  forgetPassword,
 }: ProfileFormProps) {
   const t = useTranslations("contact");
   const form = useForm<z.infer<typeof formSchema>>({
@@ -50,6 +53,7 @@ export function ProfileForm({
       message: "",
       password: "",
       confirmPassword: "",
+      forgetPassword: false,
     },
   });
 
@@ -126,6 +130,20 @@ export function ProfileForm({
               <FormItem>
                 <FormControl>
                   <InputWithLabel password={true} field={field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        )}
+        {forgetPassword && (
+          <FormField
+            control={form.control}
+            name="forgetPassword"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <InputWithLabel forgetPassword={true} field={field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

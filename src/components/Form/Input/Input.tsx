@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { div } from "framer-motion/client";
 import { Eye, EyeOff, Lock, Mail } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 
@@ -15,11 +15,23 @@ interface InputWithLabelProps {
   confirmPassword?: boolean;
   field?: any;
   socialLogin?: boolean;
+  forgetPassword?: boolean;
 }
 
-export function InputWithLabel({ emailOrPhone, name, phone, message, password, confirmPassword, field, socialLogin }: InputWithLabelProps) {
+export function InputWithLabel({
+  emailOrPhone,
+  name,
+  phone,
+  message,
+  password,
+  confirmPassword,
+  field,
+  socialLogin,
+  forgetPassword,
+}: InputWithLabelProps) {
   const t = useTranslations("contact");
   const tSocialLogin = useTranslations("socialLogin");
+  const tSignin = useTranslations("signin");
   const [showPassword, setShowPassword] = useState(false);
   return (
     <>
@@ -90,6 +102,13 @@ export function InputWithLabel({ emailOrPhone, name, phone, message, password, c
             </button>
           </div>
         </>
+      )}
+      {forgetPassword && (
+        <div className="flex">
+          <Link href="/forgetPassword" className="text-sm text-red-500 font-semibold hover:text-red-600 hover:underline">
+            {tSignin("form.forgetPassword")}
+          </Link>
+        </div>
       )}
       {confirmPassword && (
         <>

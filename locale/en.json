@@ -195,7 +195,8 @@
     "form": {
       "title": "Sign In",
       "content": "Don't have an account?",
-      "subContent": "Sign up"
+      "subContent": "Sign up",
+      "forgetPassword": "Forget Password?"
     },
     "content": {
       "title": "Welcome Back 👋",

@@ -136,6 +136,7 @@ export default function SignIn() {
               confirmPasswordField={false}
               messageField={false}
               socialLogin={true}
+              forgetPassword={true}
             />
           </div>
         </div>
