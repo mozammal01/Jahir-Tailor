@@ -201,5 +201,19 @@
       "title": "Welcome Back 👋",
       "description": "Sign in to access your dashboard, manage your account, and stay updated."
     }
+  },
+  "signup": {
+    "form": {
+      "title": "Sign Up",
+      "content": "Already have an account?",
+      "subContent": "Sign in"
+    },
+    "content": {
+      "title": "Welcome👋",
+      "description": "Create your free account to access personalized features, manage your preferences, and enjoy a seamless exper  ience across our platform. Signing up takes less than a minute — no credit card required."
+    }
+  },
+  "socialLogin": {
+    "label": "Sign in with Google"
   }
 }

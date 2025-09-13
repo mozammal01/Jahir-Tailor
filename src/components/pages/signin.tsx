@@ -98,7 +98,7 @@ import signinImage from "../../../public/signinCover/signinCover.jpg";
 import { ProfileForm } from "../Form/form";
 import { useTranslations } from "next-intl";
 
-export default function SignInPage() {
+export default function SignIn() {
   const [showPassword, setShowPassword] = useState(false);
   const t = useTranslations("signin");
   return (
@@ -122,7 +122,7 @@ export default function SignInPage() {
           <h2 className="text-3xl font-bold text-gray-800 text-center">{t("form.title")}</h2>
           <p className="text-sm text-center text-gray-600">
             {t("form.content")}{" "}
-            <Link href="/sign-up" className="text-blue-600 hover:underline">
+            <Link href="/signup" className="text-blue-600 hover:underline">
               {t("form.subContent")}
             </Link>
           </p>
@@ -135,6 +135,7 @@ export default function SignInPage() {
               phoneField={false}
               confirmPasswordField={false}
               messageField={false}
+              socialLogin={true}
             />
           </div>
         </div>

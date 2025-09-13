@@ -1,7 +1,10 @@
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { div } from "framer-motion/client";
 import { Eye, EyeOff, Lock, Mail } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
+import { FcGoogle } from "react-icons/fc";
 
 interface InputWithLabelProps {
   emailOrPhone?: boolean;
@@ -11,10 +14,12 @@ interface InputWithLabelProps {
   password?: boolean;
   confirmPassword?: boolean;
   field?: any;
+  socialLogin?: boolean;
 }
 
-export function InputWithLabel({ emailOrPhone, name, phone, message, password, confirmPassword, field }: InputWithLabelProps) {
+export function InputWithLabel({ emailOrPhone, name, phone, message, password, confirmPassword, field, socialLogin }: InputWithLabelProps) {
   const t = useTranslations("contact");
+  const tSocialLogin = useTranslations("socialLogin");
   const [showPassword, setShowPassword] = useState(false);
   return (
     <>
@@ -101,6 +106,16 @@ export function InputWithLabel({ emailOrPhone, name, phone, message, password, c
           />
         </div>
       )}
+      {
+        socialLogin && (
+          <div className="grid w-full items-center gap-3 mt-4">
+            <Button variant="outline" className="w-full">
+            <FcGoogle />
+            {tSocialLogin("label")}
+            </Button>
+          </div>
+        )
+      }
     </>
   );
 }

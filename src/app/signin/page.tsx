@@ -1,5 +1,5 @@
-import SignInPage from "@/components/pages/signin";
+import SignIn from "@/components/pages/signin";
 
-export default function SignIn() {
-  return <SignInPage />;
+export default function SignInPage() {
+  return <SignIn />;
 }

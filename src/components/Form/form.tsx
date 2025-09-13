@@ -16,6 +16,7 @@ const formSchema = z.object({
   message: z.string().min(0, {}),
   password: z.string().min(0, {}),
   confirmPassword: z.string().min(0, {}),
+  socialLogin: z.boolean(),
 });
 
 interface ProfileFormProps {
@@ -26,6 +27,7 @@ interface ProfileFormProps {
   passwordField: boolean;
   confirmPasswordField: boolean;
   className: string;
+  socialLogin: boolean;
 }
 
 export function ProfileForm({
@@ -36,6 +38,7 @@ export function ProfileForm({
   passwordField,
   confirmPasswordField,
   className,
+  socialLogin,
 }: ProfileFormProps) {
   const t = useTranslations("contact");
   const form = useForm<z.infer<typeof formSchema>>({
@@ -136,14 +139,30 @@ export function ProfileForm({
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <InputWithLabel confirmPassword={true} field={field}  />
+                  <InputWithLabel confirmPassword={true} field={field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
         )}
-        <Button className="w-full rounded-xl" type="submit">{t("form.sendButton")}</Button>
+        <Button className="w-full rounded-xl" type="submit">
+          {t("form.sendButton")}
+        </Button>
+        {socialLogin && (
+          <FormField
+            control={form.control}
+            name="socialLogin"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <InputWithLabel socialLogin={true} field={field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        )}
       </form>
     </Form>
   );

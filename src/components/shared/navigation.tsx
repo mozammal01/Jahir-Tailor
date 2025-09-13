@@ -51,7 +51,7 @@ export default function Navbar() {
             <div className="">
               <LanguageSwitcher />
             </div>
-            <Link href="#book" className="px-6 py-2 rounded-full bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition">
+            <Link href="/signin" className="px-6 py-2 rounded-full bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition">
               {t("login")}
             </Link>
           </div>
@@ -85,7 +85,7 @@ export default function Navbar() {
             {t("contact")}
           </Link>
           <Link
-            href="#book"
+            href="/signin"
             className="block w-full text-center px-4 py-2 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-700 transition"
           >
             {t("login")}
