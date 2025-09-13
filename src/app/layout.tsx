@@ -28,7 +28,6 @@ type Props = {
 
 export default async function RootLayout({children}: Props) {
   const locale = await getLocale();
-  console.log(locale);
   return (
     <html lang={locale}>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>

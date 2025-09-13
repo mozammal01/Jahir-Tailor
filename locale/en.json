@@ -111,7 +111,7 @@
     },
     "femaleKid": {
       "title": "Custom Frock or Dress Stitching",
-        "description": "Made-to-measure dresses or frocks for girls, designed for comfort and style."
+      "description": "Made-to-measure dresses or frocks for girls, designed for comfort and style."
     }
   },
   "blogs": {
@@ -142,9 +142,9 @@
         "label": "Name",
         "placeholder": "Enter your Name"
       },
-      "emailInput": {
-        "label": "Email",
-        "placeholder": "Enter your Email"
+      "emailOrPhoneInput": {
+        "label": "Email or Phone Number",
+        "placeholder": "Enter your Email or Phone Number"
       },
       "phoneInput": {
         "label": "Phone",
@@ -162,7 +162,7 @@
         "label": "Confirm Password",
         "placeholder": "Enter your Confirm Password"
       },
-      "sendButton": "Send Message"
+      "sendButton": "Submit"
     },
     "contactInfo": {
       "title": "Contact Information",
@@ -189,6 +189,17 @@
       "gallery": "Gallery",
       "blogs": "Blogs",
       "contact": "Contact"
+    }
+  },
+  "signin": {
+    "form": {
+      "title": "Sign In",
+      "content": "Don't have an account?",
+      "subContent": "Sign up"
+    },
+    "content": {
+      "title": "Welcome Back 👋",
+      "description": "Sign in to access your dashboard, manage your account, and stay updated."
     }
   }
 }

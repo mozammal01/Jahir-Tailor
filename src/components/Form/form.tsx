@@ -10,34 +10,32 @@ import { InputWithLabel } from "./Input/Input";
 import { useTranslations } from "next-intl";
 
 const formSchema = z.object({
-  name: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-  email: z.string().email({}),
-  phone: z.string().min(10, {}),
-  message: z.string().min(5, {}),
-  password: z.string().min(8, {}),
-  confirmPassword: z.string().min(8, {}),
+  name: z.string().min(0, {}),
+  email: z.string().min(0, {}),
+  phone: z.string().min(0, {}),
+  message: z.string().min(0, {}),
+  password: z.string().min(0, {}),
+  confirmPassword: z.string().min(0, {}),
 });
 
 interface ProfileFormProps {
-  description: string;
   emailField: boolean;
   nameField: boolean;
   phoneField: boolean;
   messageField: boolean;
   passwordField: boolean;
   confirmPasswordField: boolean;
+  className: string;
 }
 
 export function ProfileForm({
-  description,
   emailField,
   nameField,
   phoneField,
   messageField,
   passwordField,
   confirmPasswordField,
+  className,
 }: ProfileFormProps) {
   const t = useTranslations("contact");
   const form = useForm<z.infer<typeof formSchema>>({
@@ -60,7 +58,7 @@ export function ProfileForm({
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2 bg-slate-50 p-10 w-[400px] lg:w-[600px] rounded-2xl">
+      <form onSubmit={form.handleSubmit(onSubmit)} className={`space-y-2 p-5 rounded-2xl ${className}`}>
         {nameField && (
           <FormField
             control={form.control}
@@ -68,7 +66,7 @@ export function ProfileForm({
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <InputWithLabel name={true} />
+                  <InputWithLabel name={true} field={field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -82,7 +80,7 @@ export function ProfileForm({
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <InputWithLabel email={true} />
+                  <InputWithLabel emailOrPhone={true} field={field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -96,7 +94,7 @@ export function ProfileForm({
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <InputWithLabel phone={true} />
+                  <InputWithLabel phone={true} field={field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -110,7 +108,7 @@ export function ProfileForm({
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <InputWithLabel message={true} />
+                  <InputWithLabel message={true} field={field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -124,7 +122,7 @@ export function ProfileForm({
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <InputWithLabel password={true} />
+                  <InputWithLabel password={true} field={field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -138,14 +136,14 @@ export function ProfileForm({
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <InputWithLabel confirmPassword={true} />
+                  <InputWithLabel confirmPassword={true} field={field}  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
         )}
-        <Button className="my-4" type="submit">{t("form.sendButton")}</Button>
+        <Button className="w-full rounded-xl" type="submit">{t("form.sendButton")}</Button>
       </form>
     </Form>
   );

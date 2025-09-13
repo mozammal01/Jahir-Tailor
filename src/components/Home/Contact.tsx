@@ -24,7 +24,7 @@ export default function Contact() {
           <div className="md:min-w-96 w-full my-6">
             <div className="flex flex-col gap-4 ">
               <ProfileForm
-                description=""
+                className="w-[400px] lg:w-[600px] bg-slate-50"  
                 emailField={true}
                 nameField={true}
                 phoneField={true}

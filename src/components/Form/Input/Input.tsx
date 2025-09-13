@@ -1,54 +1,104 @@
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Eye, EyeOff, Lock, Mail } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 
 interface InputWithLabelProps {
-  email?: boolean;
+  emailOrPhone?: boolean;
   name?: boolean;
   phone?: boolean;
   message?: boolean;
   password?: boolean;
   confirmPassword?: boolean;
+  field?: any;
 }
 
-export function InputWithLabel({ email, name, phone, message, password, confirmPassword }: InputWithLabelProps) {
+export function InputWithLabel({ emailOrPhone, name, phone, message, password, confirmPassword, field }: InputWithLabelProps) {
   const t = useTranslations("contact");
+  const [showPassword, setShowPassword] = useState(false);
   return (
     <>
       {name && (
         <div className="grid w-full items-center gap-3">
-          <Label htmlFor="name">{t("form.nameInput.label")}</Label>
-          <Input className="" type="name" id="name" placeholder={t("form.nameInput.placeholder")} />
+          <label htmlFor="name" className="block text-sm font-bold text-gray-700">
+            {t("form.nameInput.label")}
+          </label>
+          <Input className="" type="name" id="name" placeholder={t("form.nameInput.placeholder")} {...field} />
         </div>
       )}
-      {email && (
-        <div className="grid w-full items-center gap-3">
-          <Label htmlFor="email">{t("form.emailInput.label")}</Label>
-          <Input className="" type="email" id="email" placeholder={t("form.emailInput.placeholder")} />
-        </div>
+      {emailOrPhone && (
+        <>
+          <div>
+            <label htmlFor="emailOrPhone" className="block text-sm font-bold text-gray-700">
+              {t("form.emailOrPhoneInput.label")}
+            </label>
+            <div className="mt-1 relative">
+              <Mail className="absolute left-3 top-2.5 text-gray-400" size={20} />
+              <Input
+                type="text"
+                id="emailOrPhone"
+                name="emailOrPhone"
+                required
+                {...field}
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                placeholder={t("form.emailOrPhoneInput.placeholder")}
+              />
+            </div>
+          </div>
+        </>
       )}
       {phone && (
         <div className="grid w-full items-center gap-3">
-          <Label htmlFor="phone">{t("form.phoneInput.label")}</Label>
-          <Input className="" type="phone" id="phone" placeholder={t("form.phoneInput.placeholder")} />
+            <label htmlFor="phone" className="block text-sm font-bold text-gray-700">
+              {t("form.phoneInput.label")}
+            </label>
+          <Input className="" type="phone" id="phone" placeholder={t("form.phoneInput.placeholder")} {...field} />
         </div>
       )}
       {message && (
         <div className="grid w-full items-center gap-3">
-          <Label htmlFor="message">{t("form.messageInput.label")}</Label>
-          <Input className="pt-5 pb-30" type="message" id="message" placeholder={t("form.messageInput.placeholder")} />
+          <label htmlFor="message" className="block text-sm font-bold text-gray-700">
+            {t("form.messageInput.label")}
+          </label>
+          <Input className="pt-5 pb-30" type="message" id="message" placeholder={t("form.messageInput.placeholder")} {...field} />
         </div>
       )}
+
       {password && (
-        <div className="grid w-full items-center gap-3">
-          <Label htmlFor="password">{t("form.passwordInput.label")}</Label>
-          <Input className="" type="password" id="password" placeholder={t("form.passwordInput.placeholder")} />
-        </div>
+        <>
+          <label htmlFor="password" className="block text-sm font-bold text-gray-700">
+            {t("form.passwordInput.label")}
+          </label>
+          <div className="mt-1 relative">
+            <Lock className="absolute left-3 top-2.5 text-gray-400" size={20} />
+            <Input
+              type={showPassword ? "text" : "password"}
+              id="password"
+              name="password"
+              required
+              {...field}
+              className="w-full pl-10 pr-10 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              placeholder="••••••••"
+            />
+            <button type="button" className="absolute right-3 top-2.5 text-gray-500" onClick={() => setShowPassword((prev) => !prev)}>
+              {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+            </button>
+          </div>
+          <div className="grid w-full items-center gap-3"></div>
+        </>
       )}
       {confirmPassword && (
         <div className="grid w-full items-center gap-3">
-          <Label htmlFor="confirmPassword">{t("form.confirmPasswordInput.label")}</Label>
-          <Input className="" type="confirmPassword" id="confirmPassword" placeholder={t("form.confirmPasswordInput.placeholder")} />
+          <label htmlFor="confirmPassword" className="block text-sm font-bold text-gray-700">
+            {t("form.confirmPasswordInput.label")}
+          </label>
+          <Input
+            className=""
+            type="confirmPassword"
+            id="confirmPassword"
+            placeholder={t("form.confirmPasswordInput.placeholder")}
+            {...field}
+          />
         </div>
       )}
     </>
