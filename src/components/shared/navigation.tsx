@@ -15,7 +15,7 @@ export default function Navbar() {
   return (
     <nav className="bg-white/90 backdrop-blur-md shadow-sm fixed w-full z-50" ref={ref}>
       <motion.div initial={{ opacity: 0, y: -30 }} animate={isInView && { opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="max-w-8xl mx-auto px-6 py-4 flex justify-between items-center">
           {/* Left: Logo */}
           <Link href="#home" className="text-2xl font-extrabold text-gray-900 tracking-tight uppercase">
             ✂️ {t("brand")}
@@ -28,6 +28,9 @@ export default function Navbar() {
             </Link>
             <Link href="#about" className="hover:text-blue-600 transition">
               {t("about")}
+            </Link>
+            <Link href="#process" className="hover:text-blue-600 transition">
+              {t("process")}
             </Link>
             <Link href="#services" className="hover:text-blue-600 transition">
               {t("services")}

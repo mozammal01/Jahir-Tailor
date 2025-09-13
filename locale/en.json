@@ -3,10 +3,192 @@
     "brand": "Jahir Tailor",
     "home": "Home",
     "about": "About",
+    "process": "Process",
     "services": "Services",
     "gallery": "Gallery",
     "blogs": "Blogs",
     "contact": "Contact",
     "login": "Login"
+  },
+  "banner": {
+    "title": "Jahir Tailor",
+    "subtitle": "Elevate Your Style with.",
+    "description": "Custom suits, alterations, and bridal wear — crafted with precision to fit your lifestyle.",
+    "appointment": "Book Appointment ",
+    "explore": "Explore Services"
+  },
+  "about": {
+    "title": "About Us",
+    "p": {
+      "fisrtP": "At Your Business Name, tailoring is not just a craft — it’s a legacy. With decades of experience and a passion for precision, we specialize in creating garments that are as unique as the individuals who wear them",
+      "secondP": "From bespoke suits to expertly altered pieces, our mission is to deliver timeless style, flawless fit, and unmatched craftsmanship. Every stitch tells a story — and we’re here to help you tell yours.",
+      "thirdP": "Whether you're walking into a boardroom, down the aisle, or onto the red carpet, we ensure your clothing reflects confidence, sophistication, and impeccable taste. Our team blends traditional techniques with modern aesthetics, using only premium fabrics and detailed tailoring to bring your vision to life.",
+      "fourthP": "Based in Your City, we serve a diverse clientele who value quality, personalization, and a tailor they can trust. Whether you're visiting us for the first time or have been with us for years, expect nothing less than attentive service, expert advice, and garments made to perfection."
+    },
+    "endContent": "Tailored for you. Crafted for life."
+  },
+  "process": {
+    "title": "Process",
+    "content": "We follow a simple and effective four-step process to deliver perfectly tailored garments.",
+    "appointment": {
+      "title": "Book Appointment",
+      "description": "Choose a convenient time to meet with our tailor online or in-store."
+    },
+    "measure": {
+      "title": "Get Measured",
+      "description": "We take precise measurements to ensure the perfect fit tailored to your body."
+    },
+    "begin": {
+      "title": "Tailoring Begin",
+      "description": "Our expert tailors craft your garment with attention to detail and quality."
+    },
+    "delivery": {
+      "title": "Delivery or Pickup",
+      "description": "Receive your finished garment on time, either delivered or ready for pickup."
+    }
+  },
+  "services": {
+    "title": "Services",
+    "content": "We provide premium tailoring solutions that combine traditional craftsmanship with modern style.",
+    "customTailoring": {
+      "title": "Custom Tailoring",
+      "description": "Perfectly fitted suits, dresses, and traditional wear tailored just for you."
+    },
+    "bespokeSuits": {
+      "title": "Bespoke Suits",
+      "description": "Perfectly fitted suits, dresses, and traditional wear tailored just for you."
+    },
+    "designerClothes": {
+      "title": "Designer Clothes",
+      "description": "Perfectly fitted suits, dresses, and traditional wear tailored just for you."
+    },
+    "alterations": {
+      "title": "Alterations",
+      "description": "From resizing to restyling, we make sure your clothes fit comfortably."
+    },
+    "designConsultation": {
+      "title": "Design Consultation",
+      "description": "Get expert advice on fabric, style, and design to match your personality."
+    }
+  },
+  "gallery": {
+    "title": "Gallery",
+    "menSuit1": {
+      "title": "Bespoke Suiting",
+      "content": "A fully custom-made suit designed from scratch to fit your exact body measurements, posture, and style preferences."
+    },
+    "menSuit2": {
+      "title": "Suit Alterations",
+      "content": "Adjusting an existing suit to improve its fit (e.g., tapering pants, shortening sleeves, adjusting the waist"
+    },
+    "menSuit3": {
+      "title": "Suit Rentals",
+      "content": "Renting suits or tuxedos for one-time events like weddings, proms, or corporate events."
+    },
+    "menSuit4": {
+      "title": "Made-to-Measure Suits",
+      "content": "A semi-custom service where a standard suit pattern is adjusted based on your measurements."
+    },
+    "menSuit5": {
+      "title": "Suit Cleaning & Pressing",
+      "content": "Professional dry cleaning, steaming, and pressing of suits to keep them fresh and sharp."
+    },
+    "womenSuit1": {
+      "title": "Custom Women’s Suit Tailoring",
+      "content": "Tailor-made suits designed to fit your exact measurements and style preferences."
+    },
+    "womenSuit2": {
+      "title": "Women’s Suit Alterations",
+      "content": "Adjustments to improve the fit of existing suits, like hemming or tapering."
+    },
+    "saree": {
+      "title": "Saree Draping Service",
+      "content": "Professional styling and draping of sarees for events, weddings, or photoshoots."
+    },
+    "maleKid": {
+      "title": "Custom Suit Stitching",
+      "content": "Tailored for boys, perfect for weddings, parties, or formal events."
+    },
+    "femaleKid": {
+      "title": "Custom Frock or Dress Stitching",
+      "content": "Made-to-measure dresses or frocks for girls, designed for comfort and style."
+    }
+  },
+  "blogs": {
+    "title": "Blogs",
+    "blog1": {
+      "title": "5 Tips to Choose the Perfect Suit",
+      "content": "Learn how to select a tailored suit that fits your body and style.",
+      "date": "Sep 10, 2025",
+      "author": "John Tailor"
+    },
+    "blog2": {
+      "title": "The Art of Hand-Stitched Detailing",
+      "content": "Discover why hand-stitching makes all the difference in premium tailoring.",
+      "date": "Aug 28, 2025",
+      "author": "Jane Needle"
+    },
+    "blog3": {
+      "title": "Tailoring Trends 2025: What’s In",
+      "content": "Explore the latest trends in men's and women's tailoring this year.",
+      "date": "Aug 15, 2025",
+      "author": "Alex Thread"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "form": {
+      "nameInput": {
+        "label": "Name",
+        "placeholder": "Enter your Name"
+      },
+      "emailInput": {
+        "label": "Email",
+        "placeholder": "Enter your Email"
+      },
+      "phoneInput": {
+        "label": "Phone",
+        "placeholder": "Enter your Phone Number"
+      },
+      "messageInput": {
+        "label": "Message",
+        "placeholder": "Enter your Message"
+      },
+      "passwordInput": {
+        "label": "Password",
+        "placeholder": "Enter your Password"
+      },
+      "confirmPasswordInput": {
+        "label": "Confirm Password",
+        "placeholder": "Enter your Confirm Password"
+      },
+      "sendButton": "Send Message"
+    },
+    "contactInfo": {
+      "title": "Contact Information",
+      "address": "123 Main St, Anytown, USA",
+      "phone": "+1 (555) 123-4567",
+      "social": "Socials"
+    }
+  },
+  "footer": {
+    "leftSide": "© 2025 Jahir Tailor. All rights reserved.",
+    "title": "Jahir Tailor",
+    "services": {
+      "content1": "Custom Tailoring",
+      "content2": "Alterations",
+      "content3": "Bespoke Suits",
+      "content4": "Designer Clothes",
+      "content5": "Design Consultation"
+    },
+    "links": {
+      "home": "Home",
+      "about": "About",
+      "process": "Process",
+      "services": "Services",
+      "gallery": "Gallery",
+      "blogs": "Blogs",
+      "contact": "Contact"
+    }
   }
 }

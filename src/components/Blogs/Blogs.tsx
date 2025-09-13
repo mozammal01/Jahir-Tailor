@@ -7,38 +7,40 @@ import blog3 from "../../../public/blogs/blog3.jpg";
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 
-const blogPosts: BlogPost[] = [
-  {
-    id: "1",
-    title: "5 Tips to Choose the Perfect Suit",
-    description: "Learn how to select a tailored suit that fits your body and style.",
-    image: blog1,
-    publishedAt: "Sep 10, 2025",
-    author: "John Tailor",
-  },
-  {
-    id: "2",
-    title: "The Art of Hand-Stitched Detailing",
-    description: "Discover why hand-stitching makes all the difference in premium tailoring.",
-    image: blog2,
-    publishedAt: "Aug 28, 2025",
-    author: "Jane Needle",
-  },
-  {
-    id: "3",
-    title: "Tailoring Trends 2025: What’s In",
-    description: "Explore the latest trends in men's and women's tailoring this year.",
-    image: blog3,
-    publishedAt: "Aug 15, 2025",
-    author: "Alex Thread",
-  },
-];
 
 export default function BlogSection() {
+  const t = useTranslations("blogs");
+  const blogPosts: BlogPost[] = [
+    {
+      id: "1",
+      title: t("blog1.title"),
+      description: t("blog1.description"),
+      image: blog1,
+      publishedAt: t("blog1.date"),
+      author: t("blog1.author"),
+    },
+    {
+      id: "2",
+      title: t("blog2.title"),
+      description: t("blog2.description"),
+      image: blog2,
+      publishedAt: t("blog2.date"),
+      author: t("blog2.author"),
+    },
+    {
+      id: "3",
+      title: t("blog3.title"),
+      description: t("blog3.date"),
+      image: blog3,
+      publishedAt: "Aug 15, 2025",
+      author: t("blog3.author"),
+    },
+  ];
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-
+  
   return (
     <section className="py-16 bg-gray-50" ref={ref}>
       <motion.div
@@ -47,7 +49,7 @@ export default function BlogSection() {
         transition={{ duration: 1 }}
         className="max-w-7xl mx-auto px-4"
       >
-        <h2 className="text-3xl font-extrabold text-gray-800 mb-20 border-l-4 border-blue-600 pl-4 uppercase">Blogs</h2>
+        <h2 className="text-3xl font-extrabold text-gray-800 mb-20 border-l-4 border-blue-600 pl-4 uppercase">{t("title")}</h2>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post, index) => (
             <motion.div key={post.id} initial={{ opacity: 0, y: 30 }} animate={isInView && { opacity: 1, y: 0 }} transition={{ duration: 1, delay: index * 0.2 }}>

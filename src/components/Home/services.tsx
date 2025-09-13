@@ -2,37 +2,39 @@
 
 import { motion, useInView } from "framer-motion";
 import { Scissors, Shirt, Ruler, PersonStanding, ReceiptText } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useRef } from "react";
 
-const services = [
-  {
-    icon: <Scissors className="w-10 h-10 text-indigo-600" />,
-    title: "Custom Tailoring",
-    description: "Perfectly fitted suits, dresses, and traditional wear tailored just for you.",
-  },
-  {
-    icon: <ReceiptText className="w-10 h-10 text-indigo-600" />,
-    title: "Bespoke Suits",
-    description: "Perfectly fitted suits, dresses, and traditional wear tailored just for you.",
-  },
-  {
-    icon: <PersonStanding className="w-10 h-10 text-indigo-600" />,
-    title: "Designer Clothes",
-    description: "Perfectly fitted suits, dresses, and traditional wear tailored just for you.",
-  },
-  {
-    icon: <Shirt className="w-10 h-10 text-indigo-600" />,
-    title: "Alterations",
-    description: "From resizing to restyling, we make sure your clothes fit comfortably.",
-  },
-  {
-    icon: <Ruler className="w-10 h-10 text-indigo-600" />,
-    title: "Design Consultation",
-    description: "Get expert advice on fabric, style, and design to match your personality.",
-  },
-];
 
 export default function Services() {
+  const t = useTranslations("services");
+  const services = [
+    {
+      icon: <Scissors className="w-10 h-10 text-indigo-600" />,
+      title: t("customTailoring.title"),
+      description: t("customTailoring.description"),
+    },
+    {
+      icon: <ReceiptText className="w-10 h-10 text-indigo-600" />,
+      title: t("bespokeSuits.title"),
+      description: t("bespokeSuits.description"),
+    },
+    {
+      icon: <PersonStanding className="w-10 h-10 text-indigo-600" />,
+      title: t("designerClothes.title"),
+      description: t("designerClothes.description"),
+    },
+    {
+      icon: <Shirt className="w-10 h-10 text-indigo-600" />,
+      title: t("alterations.title"),
+      description: t("alterations.description"),
+    },
+    {
+      icon: <Ruler className="w-10 h-10 text-indigo-600" />,
+      title: t("designConsultation.title"),
+      description: t("designConsultation.description"),
+    },
+  ];
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
@@ -44,10 +46,10 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="text-3xl md:text-4xl font-bold mb-6 border-l-4 border-blue-600 pl-4 uppercase"
         >
-          Services
+          {t("title")}
         </motion.h2>
         <p className="text-gray-600 max-w-2xl mb-12 font-semibold">
-          We provide premium tailoring solutions that combine traditional craftsmanship with modern style.
+          {t("content")}
         </p>
         <div className="grid md:grid-cols-3 gap-8" ref={ref}>
           {services.map((service, index) => (

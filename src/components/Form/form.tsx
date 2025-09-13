@@ -7,6 +7,7 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { InputWithLabel } from "./Input/Input";
+import { useTranslations } from "next-intl";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -38,6 +39,7 @@ export function ProfileForm({
   passwordField,
   confirmPasswordField,
 }: ProfileFormProps) {
+  const t = useTranslations("contact");
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -143,7 +145,7 @@ export function ProfileForm({
             )}
           />
         )}
-        <Button className="my-4" type="submit">Submit</Button>
+        <Button className="my-4" type="submit">{t("form.sendButton")}</Button>
       </form>
     </Form>
   );

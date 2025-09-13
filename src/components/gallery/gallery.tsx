@@ -23,6 +23,7 @@ import Image from "next/image";
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 
 interface GalleryItem {
   imageUrl: StaticImageData;
@@ -30,64 +31,65 @@ interface GalleryItem {
   description: string;
 }
 
-const galleryItems: GalleryItem[] = [
-  {
-    imageUrl: menSuit1,
-    title: "Sunset Over Mountains",
-    description: "A beautiful sunset captured in the Alps.",
-  },
-  {
-    imageUrl: menSuit2,
-    title: "City at Night",
-    description: "Skyline of New York City during the night.",
-  },
-  {
-    imageUrl: menSuit3,
-    title: "Forest Path",
-    description: "A peaceful trail through a dense forest.",
-  },
-  {
-    imageUrl: menSuit4,
-    title: "Ocean Horizon",
-    description: "Endless blue waves meeting the sky.",
-  },
-  {
-    imageUrl: menSuit5,
-    title: "Ocean Horizon",
-    description: "Endless blue waves meeting the sky.",
-  },
-  {
-    imageUrl: womenSuit1,
-    title: "Ocean Horizon",
-    description: "Endless blue waves meeting the sky.",
-  },
-
-  {
-    imageUrl: womenSuit2,
-    title: "Ocean Horizon",
-    description: "Endless blue waves meeting the sky.",
-  },
-
-  {
-    imageUrl: saree,
-    title: "Ocean Horizon",
-    description: "Endless blue waves meeting the sky.",
-  },
-
-  {
-    imageUrl: maleKids,
-    title: "Ocean Horizon",
-    description: "Endless blue waves meeting the sky.",
-  },
-
-  {
-    imageUrl: femaleKids,
-    title: "Ocean Horizon",
-    description: "Endless blue waves meeting the sky.",
-  },
-];
 
 export default function GallerySlider() {
+  const t = useTranslations("gallery");
+  const galleryItems: GalleryItem[] = [
+    {
+      imageUrl: menSuit1,
+      title: t("menSuit1.title"),
+      description: t("menSuit1.description"),
+    },
+    {
+      imageUrl: menSuit2,
+      title: t("menSuit2.title"),
+      description: t("menSuit2.description"),
+    },
+    {
+      imageUrl: menSuit3,
+      title: t("menSuit3.title"),
+      description: t("menSuit3.description"),
+    },
+    {
+      imageUrl: menSuit4,
+      title: t("menSuit4.title"),
+      description: t("menSuit4.description"),
+    },
+    {
+      imageUrl: menSuit5,
+      title: t("menSuit5.title"),
+      description: t("menSuit5.description"),
+    },
+    {
+      imageUrl: womenSuit1,
+      title: t("womenSuit1.title"),
+      description: t("womenSuit1.description"),
+    },
+  
+    {
+      imageUrl: womenSuit2,
+      title: t("womenSuit2.title"),
+      description: t("womenSuit2.description"),
+    },
+  
+    {
+      imageUrl: saree,
+      title: t("saree.title"),
+      description: t("saree.description"),
+    },
+  
+    {
+      imageUrl: maleKids,
+      title: t("maleKid.title"),
+      description: t("maleKid.description"),
+    },
+  
+    {
+      imageUrl: femaleKids,
+      title: t("femaleKid.title"),
+      description: t("femaleKid.description"),
+    },
+  ];
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
