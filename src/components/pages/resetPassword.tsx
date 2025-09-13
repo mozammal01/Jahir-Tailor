@@ -1,31 +1,24 @@
-import Link from "next/link";
 import { ProfileForm } from "../Form/form";
 import { useTranslations } from "next-intl";
 
-export default function ForgetPassword() {
-  const t = useTranslations("forgetPassword");
+export default function ResetPassword() {
+  const t = useTranslations("resetPassword");
   return (
     <div className="flex min-h-screen justify-center items-center">
       <div className="flex flex-col space-y-5 h-[400px] justify-center items-center max-w-[400] mx-auto bg-slate-50 rounded-xl px-5">
         <h1 className="text-2xl font-bold text-gray-800 text-center uppercase">{t("title")}</h1>
         <ProfileForm
-          emailField={true}
+          emailField={false}
           nameField={false}
           phoneField={false}
           messageField={false}
-          passwordField={false}
-          confirmPasswordField={false}
+          passwordField={true}
+          confirmPasswordField={true}
           className="w-full"
           socialLogin={false}
           forgetPassword={false}
           submitButton={t("sendButton")}
         />
-        <p className="text-sm text-gray-500 text-center font-semibold mt-[-20px]">
-          {t("content")}
-          <Link href="/signin" className="text-blue-600 hover:underline">
-            {t("subContent")}
-          </Link>
-        </p>
       </div>
     </div>
   );

@@ -29,8 +29,8 @@ export default function SignUp() {
       {/* Right side - sign-in form */}
       <div className="w-full lg:w-1/2 flex items-center justify-center bg-white px-6">
         <div className="max-w-md w-full space-y-6">
-          <h2 className="text-3xl font-bold text-gray-800 text-center">{t("form.title")}</h2>
-          <p className="text-sm text-center text-gray-600">
+          <h2 className="text-3xl font-bold text-gray-800 text-center uppercase">{t("form.title")}</h2>
+          <p className="text-sm text-center text-gray-600 font-semibold">
             {t("form.content")}{" "}
             <Link href="/signin" className="text-blue-600 hover:underline">
               {t("form.subContent")}
@@ -46,6 +46,8 @@ export default function SignUp() {
               confirmPasswordField={true}
               messageField={false}
               socialLogin={true}
+              forgetPassword={false}
+              submitButton={t("form.sendButton")}
             />
           </div>
         </div>

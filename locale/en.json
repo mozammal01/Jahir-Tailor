@@ -194,9 +194,10 @@
   "signin": {
     "form": {
       "title": "Sign In",
-      "content": "Don't have an account?",
+      "content": "Don't have an account? ",
       "subContent": "Sign up",
-      "forgetPassword": "Forget Password?"
+      "forgetPassword": "Forget Password?",
+      "sendButton": "Sign in"
     },
     "content": {
       "title": "Welcome Back 👋",
@@ -206,8 +207,9 @@
   "signup": {
     "form": {
       "title": "Sign Up",
-      "content": "Already have an account?",
-      "subContent": "Sign in"
+      "content": "Already have an account? ",
+      "subContent": "Sign in",
+      "sendButton": "Sign up"
     },
     "content": {
       "title": "Welcome👋",
@@ -216,5 +218,15 @@
   },
   "socialLogin": {
     "label": "Sign in with Google"
+  },
+  "forgetPassword": {
+    "title": "Forget Password",
+    "content": "Remember your password? ",
+    "subContent": "Sign in",
+    "sendButton": "Submit"
+  },
+  "resetPassword": {
+    "title": "Reset Password",
+    "sendButton": "Submit"
   }
 }

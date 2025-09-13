@@ -7,7 +7,6 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { InputWithLabel } from "./Input/Input";
-import { useTranslations } from "next-intl";
 
 const formSchema = z.object({
   name: z.string().min(0, {}),
@@ -16,8 +15,8 @@ const formSchema = z.object({
   message: z.string().min(0, {}),
   password: z.string().min(0, {}),
   confirmPassword: z.string().min(0, {}),
-  socialLogin: z.boolean(),
-  forgetPassword: z.boolean(),
+  socialLogin: z.boolean().optional(),
+  forgetPassword: z.boolean().optional()
 });
 
 interface ProfileFormProps {
@@ -28,8 +27,9 @@ interface ProfileFormProps {
   passwordField: boolean;
   confirmPasswordField: boolean;
   className: string;
-  socialLogin: boolean;
-  forgetPassword: boolean;
+  socialLogin?: boolean;
+  forgetPassword?: boolean;
+  submitButton: string;
 }
 
 export function ProfileForm({
@@ -42,8 +42,8 @@ export function ProfileForm({
   className,
   socialLogin,
   forgetPassword,
+  submitButton,
 }: ProfileFormProps) {
-  const t = useTranslations("contact");
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -165,7 +165,7 @@ export function ProfileForm({
           />
         )}
         <Button className="w-full rounded-xl mt-4" type="submit">
-          {t("form.sendButton")}
+          {submitButton}
         </Button>
         {socialLogin && (
           <FormField
