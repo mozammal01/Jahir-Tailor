@@ -75,62 +75,62 @@
     "title": "Gallery",
     "menSuit1": {
       "title": "Bespoke Suiting",
-      "content": "A fully custom-made suit designed from scratch to fit your exact body measurements, posture, and style preferences."
+      "description": "A fully custom-made suit designed from scratch to fit your exact body measurements, posture, and style preferences."
     },
     "menSuit2": {
       "title": "Suit Alterations",
-      "content": "Adjusting an existing suit to improve its fit (e.g., tapering pants, shortening sleeves, adjusting the waist"
+      "description": "Adjusting an existing suit to improve its fit (e.g., tapering pants, shortening sleeves, adjusting the waist"
     },
     "menSuit3": {
       "title": "Suit Rentals",
-      "content": "Renting suits or tuxedos for one-time events like weddings, proms, or corporate events."
+      "description": "Renting suits or tuxedos for one-time events like weddings, proms, or corporate events."
     },
     "menSuit4": {
       "title": "Made-to-Measure Suits",
-      "content": "A semi-custom service where a standard suit pattern is adjusted based on your measurements."
+      "description": "A semi-custom service where a standard suit pattern is adjusted based on your measurements."
     },
     "menSuit5": {
       "title": "Suit Cleaning & Pressing",
-      "content": "Professional dry cleaning, steaming, and pressing of suits to keep them fresh and sharp."
+      "description": "Professional dry cleaning, steaming, and pressing of suits to keep them fresh and sharp."
     },
     "womenSuit1": {
       "title": "Custom Women’s Suit Tailoring",
-      "content": "Tailor-made suits designed to fit your exact measurements and style preferences."
+      "description": "Tailor-made suits designed to fit your exact measurements and style preferences."
     },
     "womenSuit2": {
       "title": "Women’s Suit Alterations",
-      "content": "Adjustments to improve the fit of existing suits, like hemming or tapering."
+      "description": "Adjustments to improve the fit of existing suits, like hemming or tapering."
     },
     "saree": {
       "title": "Saree Draping Service",
-      "content": "Professional styling and draping of sarees for events, weddings, or photoshoots."
+      "description": "Professional styling and draping of sarees for events, weddings, or photoshoots."
     },
     "maleKid": {
       "title": "Custom Suit Stitching",
-      "content": "Tailored for boys, perfect for weddings, parties, or formal events."
+      "description": "Tailored for boys, perfect for weddings, parties, or formal events."
     },
     "femaleKid": {
       "title": "Custom Frock or Dress Stitching",
-      "content": "Made-to-measure dresses or frocks for girls, designed for comfort and style."
+        "description": "Made-to-measure dresses or frocks for girls, designed for comfort and style."
     }
   },
   "blogs": {
     "title": "Blogs",
     "blog1": {
       "title": "5 Tips to Choose the Perfect Suit",
-      "content": "Learn how to select a tailored suit that fits your body and style.",
+      "description": "Learn how to select a tailored suit that fits your body and style.",
       "date": "Sep 10, 2025",
       "author": "John Tailor"
     },
     "blog2": {
       "title": "The Art of Hand-Stitched Detailing",
-      "content": "Discover why hand-stitching makes all the difference in premium tailoring.",
+      "description": "Discover why hand-stitching makes all the difference in premium tailoring.",
       "date": "Aug 28, 2025",
       "author": "Jane Needle"
     },
     "blog3": {
       "title": "Tailoring Trends 2025: What’s In",
-      "content": "Explore the latest trends in men's and women's tailoring this year.",
+      "description": "Explore the latest trends in men's and women's tailoring this year.",
       "date": "Aug 15, 2025",
       "author": "Alex Thread"
     }
@@ -166,7 +166,7 @@
     },
     "contactInfo": {
       "title": "Contact Information",
-      "address": "123 Main St, Anytown, USA",
+      "location": "123 Main St, Anytown, USA",
       "phone": "+1 (555) 123-4567",
       "social": "Socials"
     }

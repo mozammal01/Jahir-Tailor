@@ -14,7 +14,7 @@ export default function Footer() {
         {/* left Middle - Logo */}
         <div>
           <Link href="/" className="text-2xl font-extrabold text-gray-200 tracking-tight uppercase">
-            ✂️ Jahir Tailor
+            ✂️ {t("title")}
           </Link>
         </div>
 
